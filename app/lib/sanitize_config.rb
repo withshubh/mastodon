@@ -70,7 +70,7 @@ class Sanitize
       end
     end
 
-    MASTODON_STRICT ||= freeze_config(
+    MASTODON_STRICT = freeze_config(
       elements: %w(p br span a),
 
       attributes: {
@@ -94,7 +94,7 @@ class Sanitize
       ]
     )
 
-    MASTODON_OEMBED ||= freeze_config merge(
+    MASTODON_OEMBED = freeze_config merge(
       RELAXED,
       elements: RELAXED[:elements] + %w(audio embed iframe source video),
 

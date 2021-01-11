@@ -8,7 +8,7 @@ module Remotable
       attribute_name ||= "#{attachment_name}_remote_url".to_sym
 
       define_method("download_#{attachment_name}!") do |url = nil|
-        url ||= self[attribute_name]
+        url = self[attribute_name]
 
         return if url.blank?
 
